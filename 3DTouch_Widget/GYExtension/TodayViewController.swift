@@ -25,7 +25,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         bg.backgroundColor = UIColor.gray
         bg.frame = self.view.frame
         self.view.addSubview(bg)
-        
+    
         bg.addGestureRecognizer(tap)
     }
     
