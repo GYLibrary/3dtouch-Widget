@@ -12,21 +12,29 @@ import NotificationCenter
 class TodayViewController: UIViewController, NCWidgetProviding {
     
     var btn: UIButton?
+    var lb:UILabel?
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.preferredContentSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
         let tap = UITapGestureRecognizer(target: self, action: #selector(TodayViewController.openURLApp))
         view.isUserInteractionEnabled = true
         view.addGestureRecognizer(tap)
-        let bg = UIImageView()
-        bg.isUserInteractionEnabled = true
-        bg.alpha = 0.01
-        bg.backgroundColor = UIColor.gray
-        bg.frame = self.view.frame
-        self.view.addSubview(bg)
-    
-        bg.addGestureRecognizer(tap)
+        
+        lb = UILabel(frame: CGRect(x: 0, y: 5, width: 200, height: 20))
+        lb?.text = "你真好"
+        lb?.font = UIFont.systemFont(ofSize: 20)
+        lb?.backgroundColor = UIColor.red
+        self.view.addSubview(lb!)
+        self.preferredContentSize = CGSize(width: UIScreen.main.bounds.width, height: 200)
+
+//        let bg = UIImageView()
+//        bg.isUserInteractionEnabled = true
+//        bg.alpha = 0.01
+//        bg.backgroundColor = UIColor.gray
+//        bg.frame = self.view.frame
+//        self.view.addSubview(bg)
+//    
+//        bg.addGestureRecognizer(tap)
     }
     
     override func didReceiveMemoryWarning() {
